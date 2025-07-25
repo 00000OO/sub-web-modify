@@ -885,7 +885,7 @@ export default {
       }
     },
     tanchuang() {
-      this.$alert(`<div style="text-align:center; font-size: 16px;"><strong>周润发 | 提供维护:</strong> <a href="https://d.zrf.me/tgq" target="_blank" style="color: #409EFF; text-decoration: none;">TG群组</a> <a href="https://d.zrf.me/blog" target="_blank" style="color: #409EFF; text-decoration: none;">Blog</a></div>`, '信息面板', {
+      this.$alert(`<div style="text-align:center; font-size: 16px;"><strong>🐈🐈🐈:</strong> <a href="https://d.zrf.me/tgq" target="_blank" style="color: #409EFF; text-decoration: none;">👀TG</a> <a href="https://t.me/vvvvvwwv" target="_blank" style="color: #409EFF; text-decoration: none;">Blog</a></div>`, '信息面板', {
         confirmButtonText: '确定',
         dangerouslyUseHTMLString: true,
         customClass: 'msgbox'
