@@ -193,14 +193,6 @@
                 </el-button>
               </el-form-item>
 
-              <!-- 【修改】只在非深色模式下显示评论开关 -->
-              <el-form-item v-if="!isDarkMode" label-width="0px" style="margin-top: 10px; text-align: center;">
-                <el-switch
-                  v-model="showComments"
-                  active-text="显示评论区"
-                  inactive-text="隐藏评论区">
-                </el-switch>
-              </el-form-item>
 
             </el-form>
           </el-container>
@@ -208,16 +200,7 @@
       </el-col>
     </el-row>
 
-    <el-row v-show="showComments" style="margin-top: 10px;">
-      <el-col>
-        <el-card>
-          <div slot="header">
-            <div style="text-align:center;font-size:15px">评 论 交 流</div>
-          </div>
-          <div id="twikoo-comment"></div>
-        </el-card>
-      </el-col>
-    </el-row>
+
 
     <el-dialog title="请选择需要观看的视频教程" :visible.sync="centerDialogVisible" :show-close="false" width="40vh" top="30vh"
       center>
@@ -329,8 +312,7 @@ const downld = 'http://' + window.location.host + '/download.html'
 export default {
   data() {
     return {
-      showComments: false,
-      twikooInitialized: false,
+
       isDarkMode: false, // 【修改】新增状态
       backendVersion: "",
       centerDialogVisible: false,
@@ -789,26 +771,6 @@ export default {
     };
   },
 
-  watch: {
-    showComments(newValue) {
-      if (newValue === true && !this.twikooInitialized) {
-        this.$nextTick(() => {
-          const currentTheme = document.body.className.includes('dark-mode') ? 'dark' : 'light';
-          try {
-            twikoo.init({
-              envId: 'https://twikoo.zrf.me',
-              el: '#twikoo-comment',
-              lang: 'zh-CN',
-              theme: currentTheme
-            });
-            this.twikooInitialized = true;
-          } catch (e) {
-            console.error("Twikoo initialization failed:", e);
-          }
-        });
-      }
-    }
-  },
 
   created() {
     document.title = "✨✨✨ | 订阅转换";
