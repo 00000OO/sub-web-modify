@@ -773,7 +773,7 @@ export default {
 
 
   created() {
-    document.title = "✨✨✨ | 订阅转换";
+    document.title = "🐈🐈🐈";
     this.isPC = this.$getOS().isPc;
   },
   mounted() {
